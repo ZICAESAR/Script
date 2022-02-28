@@ -3,7 +3,8 @@ repeat wait() until game:IsLoaded()
 if game:GetService("CoreGui"):FindFirstChild("AutoClick") then
    game:GetService("CoreGui"):FindFirstChild("AutoClick"):Destroy()
 end
-local UILib = loadstring(game:HttpGet('https://pastebin.com/raw/zj1Zd78z'))()
+
+local UILib = loadstring(game:HttpGet("https://raw.githubusercontent.com/ZICAESAR/Key-Loader/main/UILib.lua"))()
 
 local win = UILib:Window("Lobby Hub (AutoClick)",Color3.fromRGB(244,0,0),Enum.KeyCode.RightControl)
 local log = win:Tab("AutoClick")
@@ -67,24 +68,20 @@ end)
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 spawn(function()
 	while wait() do
-        pcall(function()
             if Click1 then
 		for i,v in pairs(getconnections(game:GetService("Players").zizacaesar.PlayerGui.mainUI.clickerButton.MouseButton1Click)) do
 			v.Function()
-            end
-        end)
+        end
     end
 end)
 
 spawn(function()
-	while wait(.5) do
-        pcall(function()
+	while wait(.2) do
             if Click2 then
 		for i,v in pairs(getconnections(game:GetService("Players").zizacaesar.PlayerGui.mainUI.clickerButton.MouseButton1Click)) do
 			v.Function()
-            end
-        end)
-    end
+        	end
+    	end
 end)
 
 spawn(function()
@@ -92,8 +89,8 @@ spawn(function()
             if Click3 then
 		for i,v in pairs(getconnections(game:GetService("Players").zizacaesar.PlayerGui.mainUI.clickerButton.MouseButton1Click)) do
 			v.Function()
-             end
-      end)
+             	end
+      	end)
 end)
 
 spawn(function()
