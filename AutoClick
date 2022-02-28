@@ -98,11 +98,18 @@ end)
 
 spawn(function()
 	game:GetService("RunService").Heartbeat:Connect(function()
-        pcall(function()
             if Click4 then
 		for i,v in pairs(getconnections(game:GetService("Players").zizacaesar.PlayerGui.mainUI.clickerButton.MouseButton1Click)) do
 			v.Function()
-            end
-        end)
+		for i,v in pairs(getconnections(game:GetService("Players").zizacaesar.PlayerGui.mainUI.clickerButton.MouseButton1Click)) do
+			v.Function()
+		for i,v in pairs(getconnections(game:GetService("Players").zizacaesar.PlayerGui.mainUI.clickerButton.MouseButton1Click)) do
+			v.Function()
+		for i,v in pairs(getconnections(game:GetService("Players").zizacaesar.PlayerGui.mainUI.clickerButton.MouseButton1Click)) do
+			v.Function()
+		     end
+	         end
+	     end
+         end
     end)
 end)
