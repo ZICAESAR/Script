@@ -69,8 +69,8 @@ spawn(function()
 	while wait() do
         pcall(function()
             if Click1 then
-                game:GetService'VirtualUser':CaptureController()
-                game:GetService'VirtualUser':Button1Down(Vector2.new(1280, 672))
+		for i,v in pairs(getconnections(game:GetService("Players").zizacaesar.PlayerGui.mainUI.clickerButton.MouseButton1Click)) do
+			v.Function()
             end
         end)
     end
@@ -80,8 +80,8 @@ spawn(function()
 	while wait(.5) do
         pcall(function()
             if Click2 then
-                game:GetService'VirtualUser':CaptureController()
-                game:GetService'VirtualUser':Button1Down(Vector2.new(1280, 672))
+		for i,v in pairs(getconnections(game:GetService("Players").zizacaesar.PlayerGui.mainUI.clickerButton.MouseButton1Click)) do
+			v.Function()
             end
         end)
     end
@@ -90,8 +90,8 @@ end)
 spawn(function()
 	game:GetService("RunService").Stepped:Connect(function()
             if Click3 then
-                game:GetService'VirtualUser':CaptureController()
-                game:GetService'VirtualUser':Button1Down(Vector2.new(1280, 672))
+		for i,v in pairs(getconnections(game:GetService("Players").zizacaesar.PlayerGui.mainUI.clickerButton.MouseButton1Click)) do
+			v.Function()
              end
       end)
 end)
@@ -100,8 +100,8 @@ spawn(function()
 	game:GetService("RunService").Heartbeat:Connect(function()
         pcall(function()
             if Click4 then
-                game:GetService'VirtualUser':CaptureController()
-                game:GetService'VirtualUser':Button1Down(Vector2.new(1280, 672))
+		for i,v in pairs(getconnections(game:GetService("Players").zizacaesar.PlayerGui.mainUI.clickerButton.MouseButton1Click)) do
+			v.Function()
             end
         end)
     end)
