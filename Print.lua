@@ -4689,12 +4689,8 @@ spawn(function()
                             if FTAK_1x then
                                 for i,v in pairs(game.Workspace.Enemies:GetChildren()) do
                                     if v.Name == Ms then
-                                        game:GetService("Workspace").Characters["LocalPlayer"][SelectToolWeapon].RemoteEvent:FireServer()
-                                        --game:GetService("Workspace").Characters.rherbybhrtjsr.Combat.RemoteEvent
-                                    end
-                                end
-                                --GVU:CaptureController()
-                                --GVU:Button1Down(Vector2.new(1280, 670))
+                                GVU:CaptureController()
+                                GVU:Button1Down(Vector2.new(1280, 670))
                             elseif SF015 == false and FTAK_1x == true then
                                 FTAK_1x = false  
                             end
