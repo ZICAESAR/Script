@@ -4545,9 +4545,9 @@ function autofarm()
                                         FTAK_1x = true
                                     end
                                     if v.Name == Ms and v:FindFirstChild("Humanoid") and v.Humanoid.Health > 0 then
-                                        v.Head.Anchored = true
-                                    else
                                         v.Head.Anchored = false
+                                    else
+                                        v.Head.Anchored = true
                                     end
                                 else
                                     MagnetActive = false    
@@ -4622,7 +4622,7 @@ spawn(function()
 end)
 
 spawn(function()
-    while wait() do
+    while wait(.5) do
         if AutoReMob then
             for i,v in pairs(game.Workspace.Enemies:GetChildren()) do
                 v.Head.Anchored = false
@@ -4632,7 +4632,7 @@ spawn(function()
 end)
 
 spawn(function()
-    game:GetService("RunService").Heartbeat:Connect(function()
+    while wait(5) do
         pcall(function()
             for i,v in pairs(game.Workspace.Enemies:GetChildren()) do
                 if _G.Magnet and MagnetActive then
@@ -4653,7 +4653,7 @@ spawn(function()
                 end
             end
         end)
-    end)
+    end
 end)
 
 local ComOldx = require(game:GetService("Players").LocalPlayer.PlayerScripts.CombatFramework)
@@ -4672,8 +4672,8 @@ spawn(function()
                             if SF015 then
                                 pcall(function()
                                     COM.activeController.increment = 3
-                                    COM.activeController.timeToNextBlock = tick()
-                                    COM.activeController.hitboxMagnitude = 60
+                                    COM.activeController.timeToNextBlock = tick() -(1)
+                                    COM.activeController.hitboxMagnitude = 50
                                     if game.Players.LocalPlayer.Character:FindFirstChild("Black Leg") then
                                         COM.activeController.timeToNextAttack = 5
                                     else
@@ -4701,7 +4701,7 @@ end)
 
 spawn(function()
 	pcall(function()
-		while wait() do
+		while wait(.5) do
 			if Superhuman then
 				if game.Players.LocalPlayer.Backpack:FindFirstChild("Combat") or game.Players.LocalPlayer.Character:FindFirstChild("Combat") or game.Players.LocalPlayer.Backpack:FindFirstChild("Electric Claw") or game.Players.LocalPlayer.Character:FindFirstChild("Electric Claw") or game.Players.LocalPlayer.Backpack:FindFirstChild("Sharkman Karate") or game.Players.LocalPlayer.Character:FindFirstChild("Sharkman Karate") or game.Players.LocalPlayer.Backpack:FindFirstChild("Death Step") or game.Players.LocalPlayer.Character:FindFirstChild("Death Step") then
 					local args = {
@@ -4753,7 +4753,7 @@ spawn(function()
 end)
 
 spawn(function()
-	while wait() do
+	while wait(.1) do
 		if melee then
 			game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("AddPoint", "Melee", SelectPoint)
 		end
@@ -4761,7 +4761,7 @@ spawn(function()
 end)
 
 spawn(function()
-	while wait() do
+	while wait(.1) do
 		if def then
 			game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("AddPoint", "Defense", SelectPoint)
 		end
@@ -4769,7 +4769,7 @@ spawn(function()
 end)
 
 spawn(function()
-	while wait() do
+	while wait(.1) do
 		if sword then
 			game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("AddPoint", "Sword", SelectPoint)
 		end
@@ -4777,7 +4777,7 @@ spawn(function()
 end)
 
 spawn(function()
-	while wait() do
+	while wait(.1) do
 		if gun then
 			game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("AddPoint", "Gun", SelectPoint)
 		end
@@ -4793,7 +4793,7 @@ spawn(function()
 end)
 
 spawn(function()
-	while wait() do
+	while wait(.1) do
 		if _G.AutoStat then
             if game.Players.LocalPlayer.Data.Stats.Melee.Level.Value ~= 2300 then
                 repeat game:GetService("RunService").Heartbeat:wait()
