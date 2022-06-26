@@ -4545,9 +4545,9 @@ function autofarm()
                                         FTAK_1x = true
                                     end
                                     if v.Name == Ms and v:FindFirstChild("Humanoid") and v.Humanoid.Health > 0 then
-                                        v.Head.Anchored = false
-                                    else
                                         v.Head.Anchored = true
+                                    else
+                                        v.Head.Anchored = false
                                     end
                                 else
                                     MagnetActive = false    
@@ -4632,7 +4632,7 @@ spawn(function()
 end)
 
 spawn(function()
-    while wait(1) do
+    game:GetService("RunService").Heartbeat:Connect(function()
         pcall(function()
             for i,v in pairs(game.Workspace.Enemies:GetChildren()) do
                 if _G.Magnet and MagnetActive then
@@ -4652,7 +4652,7 @@ spawn(function()
                 end
             end
         end)
-    end
+    end)
 end)
 
 local ComOldx = require(game:GetService("Players").LocalPlayer.PlayerScripts.CombatFramework)
