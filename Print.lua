@@ -4659,7 +4659,6 @@ end)
 local ComOldx = require(game:GetService("Players").LocalPlayer.PlayerScripts.CombatFramework)
 local COM = getupvalues(ComOldx)[2]
 local GLP = game.Players.LocalPlayer:GetMouse()
-local GVU = game:GetService("VirtualUser")
 local CSR = require(game.ReplicatedStorage.Util.CameraShaker)
 CSR:Stop()
 
@@ -4687,8 +4686,8 @@ spawn(function()
                         end) 
                         pcall(function()
                             if FTAK_1x then
-                                GVU:CaptureController()
-                                GVU:Button1Down(Vector2.new(1280, 670))
+                                game:GetService("VirtualUser"):CaptureController()
+                                game:GetService("VirtualUser"):Button1Down(Vector2.new(1280, 670))
                             elseif SF015 == false and FTAK_1x == true then
                                 FTAK_1x = false  
                             end
