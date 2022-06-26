@@ -4632,17 +4632,16 @@ spawn(function()
 end)
 
 spawn(function()
-    while wait(5) do
+    while wait(1) do
         pcall(function()
             for i,v in pairs(game.Workspace.Enemies:GetChildren()) do
                 if _G.Magnet and MagnetActive then
                     if v.Name == Ms and v:FindFirstChild("Humanoid") and v.Humanoid.Health > 0 then
-                        if (v.HumanoidRootPart.Position - PosMon.Position).Magnitude <= 300 then
+                        if (v.HumanoidRootPart.Position - PosMon.Position).Magnitude <= 400 then
                             v.Head.CanCollide = false
                             v.HumanoidRootPart.CanCollide = false
-                            v.HumanoidRootPart.Size = Vector3.new(60, 60, 60)
+                            v.HumanoidRootPart.Size = Vector3.new(50,50,50)
                             v.HumanoidRootPart.CFrame = PosMon
-                            v.Humanoid:ChangeState(11)
                             sethiddenproperty(game.Players.LocalPlayer, "MaxSimulationRadius", math.huge)
                             sethiddenproperty(game.Players.LocalPlayer, "SimulationRadius", math.huge)
                             if v.Humanoid:FindFirstChild("Animator") then
@@ -4667,7 +4666,7 @@ spawn(function()
         wait()
             repeat wait()
                 while true do wait()
-                    for i = 1,2,1 do
+                    for i = 1,2,5 do
                         pcall(function()
                             if SF015 then
                                 pcall(function()
