@@ -3684,108 +3684,33 @@ page1:Button("Reset System Tween", function()
     TP(game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame)
 end)
 
-page1:Label("Auto Farm",0);
+page1:Label("Auto Farm Misc", 0)
 
-page1:Toggle("Auto Farm Level", false, function(auto)
-    _G.AutoFarmLevel = auto
-	if _G.AutoFarmLevel and SelectToolWeapon == nil then
-        game.StarterGui:SetCore("SendNotification", {
-            Title = "Farm Level", 
-            Text = "Select Weapon plsss"
-        })
-	else
-        Auto_Farm = auto
-        if auto == false then
-            game.Players.LocalPlayer.PlayerGui.Main.Quest.Visible = false
-            wait(0.5)
-            TP(game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame)
-        end
+page1:Button("Redeem Code 2xExp", function()
+   	function UseCode(Text)
+        game:GetService("ReplicatedStorage").Remotes.Redeem:InvokeServer(Text)
     end
+    UseCode("Starcodeheo")
+    UseCode("Magicbus")
+    UseCode("Enyu_is_Pro")
+    UseCode("Sub2Fer999")
+    UseCode("Bluxxy")
+    UseCode("JCWK")
+    UseCode("3BVISITS")
+    UseCode("UPD16")
+    UseCode("SUB2GAMERROBOT_EXP1")
+    UseCode("StrawHatMaine")
+    UseCode("Sub2OfficialNoobie")
+    UseCode("THEGREATACE")
+    UseCode("TantaiGaming")
+    UseCode("Axiore")
+    UseCode("SUB2NOOBMASTER123")
+    UseCode("Sub2Daigrock") 
 end)
 
-page1:Toggle("Auto Kaiton", false, function(auto)
-    _G.AutoKaiton = auto
-	if _G.AutoKaiton and SelectToolWeapon == nil then
-        game.StarterGui:SetCore("SendNotification", {
-            Title = "Kaiton", 
-            Text = "Select Weapon "
-        })
-    else
-        Auto_Farm = auto
-        AutoNew = auto
-        RedeemCode2exp = auto
-        autobuya = auto
-        if auto == false then
-            game.Players.LocalPlayer.PlayerGui.Main.Quest.Visible = false
-            wait(0.5)
-            TP(game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame)
-        end
-    end
-end)
+page1:Label("Set Fps Setting",0)
 
-local SelectWeapon = page1:Drop("SelectWeapon", false, Wapon,function(Value)
-    SelectToolWeapon = Value
-    SelectToolWeaponOld = Value
-end)
-
-page1:Button("Refresh Weapon",function()
-    SelectWeapon:Clear()
-    for i,v in pairs(game.Players.LocalPlayer.Backpack:GetChildren()) do  
-        if v:IsA("Tool") then
-            SelectWeapon:Add(v.Name)
-        end
-    end
-    for i,v in pairs(game.Players.LocalPlayer.Character:GetChildren()) do
-        if v:IsA("Tool") then
-            SelectWeapon:Add(v.Name)
-        end
-    end
-end)
-
-page1:Label("More Auto",0);
-
-page1:Toggle("AutoSuperhuman", false, function(auto)
-    Superhuman = auto
-end)
-
-page1:Toggle("Auto NewWorld", false, function(auto)
-    AutoNew = auto
-    if auto == false then
-        wait(.5)
-        TP(game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame)
-    end
-end)
-
-local page2 = Tap1:newpage();
-page2:Label("Auto Farm Setting",0);
-
-_G.SecretFunction = true
-SF015 = true
-page2:Toggle("Fast Attack", _G.SecretFunction, function(FA2)
-    SF015 = FA2
-end)
-
-_G.SetSpawn = true
-page2:Toggle("Auto SetSpawn", _G.SetSpawn, function(vu)
-    _G.SetSpawn = vu
-end)
-
-_G.Magnet = true
-page2:Toggle("Magnet Lock Mob", _G.Magnet, function(vu)
-    _G.Magnet = vu
-end)
-
-page2:Toggle("Fix Magnet", _G.AutoReMob, function(vu)
-    AutoReMob = vu
-end)
-
-page2:Toggle("Auto Hari", true, function(vu)
-    AutoHaki = vu
-end)
-
-page2:Label("Set Fps Setting",0)
-
-page2:Button("Fps Boost", function()
+page1:Button("Fps Boost", function()
    	local decalsyeeted = true
     local g = game
     local w = g.Workspace
@@ -3825,22 +3750,91 @@ page2:Button("Fps Boost", function()
     end
 end)
 
-page2:Button("SetFps ( Unlock )", function()
+page1:Button("SetFps ( Unlock )", function()
     pcall(setfpscap, 99999)
 end)
 
-page2:Button("SetFps ( 120 )", function()
-    pcall(setfpscap, 120)
+local page2 = Tap1:newpage();
+
+page2:Label("Auto Farm Setting",0);
+game:GetService("ReplicatedStorage").Util.Sound.Storage.Lazy.Hit1:Destroy()
+page2:Toggle("Auto Farm Level", false, function(auto)
+    _G.AutoFarmLevel = auto
+	if _G.AutoFarmLevel and SelectToolWeapon == nil then
+        game.StarterGui:SetCore("SendNotification", {
+            Title = "Farm Level", 
+            Text = "Select Weapon plsss"
+        })
+	else
+        AutoReMob = false
+        _G.SetSpawn = auto
+        _G.Magnet = auto
+        AutoHaki = auto
+        SF015 = auto
+        Auto_Farm = auto
+        if auto == false then
+            game.Players.LocalPlayer.PlayerGui.Main.Quest.Visible = false
+            wait(0.5)
+            AutoReMob = true
+            TP(game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame)
+        end
+    end
 end)
 
-page2:Button("SetFps ( 60 )", function()
-    pcall(setfpscap, 60)
-end)
-page2:Button("SetFps ( 30 )", function()
-    pcall(setfpscap, 30)
+page2:Toggle("Auto Kaiton", false, function(auto)
+    _G.AutoKaiton = auto
+	if _G.AutoKaiton and SelectToolWeapon == nil then
+        game.StarterGui:SetCore("SendNotification", {
+            Title = "Kaiton", 
+            Text = "Select Weapon "
+        })
+    else
+        AutoReMob = false
+        _G.SetSpawn = auto
+        _G.Magnet = auto
+        AutoHaki = auto
+        SF015 = auto
+        Auto_Farm = auto
+        AutoNew = auto
+        RedeemCode2exp = auto
+        autobuya = auto
+        if auto == false then
+            game.Players.LocalPlayer.PlayerGui.Main.Quest.Visible = false
+            wait(0.5)
+            AutoReMob = true
+            TP(game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame)
+        end
+    end
 end)
 
-page2:Label("Auto Farm Misc", 0)
+local SelectWeapon = page2:Drop("SelectWeapon", false, Wapon,function(Value)
+    SelectToolWeapon = Value
+    SelectToolWeaponOld = Value
+end)
+
+page2:Button("Refresh Weapon",function()
+    SelectWeapon:Clear()
+    for i,v in pairs(game.Players.LocalPlayer.Backpack:GetChildren()) do  
+        if v:IsA("Tool") then
+            SelectWeapon:Add(v.Name)
+        end
+    end
+    for i,v in pairs(game.Players.LocalPlayer.Character:GetChildren()) do
+        if v:IsA("Tool") then
+            SelectWeapon:Add(v.Name)
+        end
+    end
+end)
+
+page2:Label("Function More",0);
+
+page2:Toggle("Auto NewWorld", false, function(auto)
+    AutoNew = auto
+    if auto == false then
+        wait(.5)
+        TP(game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame)
+    end
+end)
 
 page2:Toggle("Auto Buy Abilities", false, function(t)
     while t do wait()
@@ -3848,32 +3842,6 @@ page2:Toggle("Auto Buy Abilities", false, function(t)
 		game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BuyHaki","Buso")
 		game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BuyHaki","Soru")
     end
-end)
-
-page2:Button("Delete Sound Attack", function()
-    game:GetService("ReplicatedStorage").Util.Sound.Storage.Lazy.Hit1:Destroy()
-end)
-
-page2:Button("Redeem Code 2xExp", function()
-   	function UseCode(Text)
-        game:GetService("ReplicatedStorage").Remotes.Redeem:InvokeServer(Text)
-    end
-    UseCode("Starcodeheo")
-    UseCode("Magicbus")
-    UseCode("Enyu_is_Pro")
-    UseCode("Sub2Fer999")
-    UseCode("Bluxxy")
-    UseCode("JCWK")
-    UseCode("3BVISITS")
-    UseCode("UPD16")
-    UseCode("SUB2GAMERROBOT_EXP1")
-    UseCode("StrawHatMaine")
-    UseCode("Sub2OfficialNoobie")
-    UseCode("THEGREATACE")
-    UseCode("TantaiGaming")
-    UseCode("Axiore")
-    UseCode("SUB2NOOBMASTER123")
-    UseCode("Sub2Daigrock") 
 end)
 
 local Tap2 = ui:Taps("Stats")
@@ -3917,7 +3885,7 @@ function TP(CFgo, TPtween)
         local LPos = game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.Position
         local tween_s = game:service"TweenService"
         local LP = game.Players.LocalPlayer
-        local tween = tween_s:Create(game.Players.LocalPlayer.Character["HumanoidRootPart"], TweenInfo.new((game:GetService("Players")["LocalPlayer"].Character.HumanoidRootPart.Position - CFgo.Position).Magnitude/250, Enum.EasingStyle.Linear), {CFrame = CFgo,TPtween})
+        local tween = tween_s:Create(game.Players.LocalPlayer.Character["HumanoidRootPart"], TweenInfo.new((game:GetService("Players")["LocalPlayer"].Character.HumanoidRootPart.Position - CFgo.Position).Magnitude/225, Enum.EasingStyle.Linear), {CFrame = CFgo,TPtween})
         tween:Play()
         NoClip = false
         if not tween then return tween 
@@ -4622,7 +4590,7 @@ spawn(function()
 end)
 
 spawn(function()
-    while wait(.5) do
+    while wait() do
         if AutoReMob then
             for i,v in pairs(game.Workspace.Enemies:GetChildren()) do
                 v.Head.Anchored = false
@@ -4637,13 +4605,16 @@ spawn(function()
             for i,v in pairs(game.Workspace.Enemies:GetChildren()) do
                 if _G.Magnet and MagnetActive then
                     if v.Name == Ms and v:FindFirstChild("Humanoid") and v.Humanoid.Health > 0 then
-                        if (v.HumanoidRootPart.Position - PosMon.Position).Magnitude <= 400 then
+                        if (v.HumanoidRootPart.Position - PosMon.Position).Magnitude <= 300 then
                             v.Head.CanCollide = false
                             v.HumanoidRootPart.CanCollide = false
-                            v.HumanoidRootPart.Size = Vector3.new(50,50,50)
+                            v.HumanoidRootPart.Size = Vector3.new(60, 60, 60)
                             v.HumanoidRootPart.CFrame = PosMon
-                            sethiddenproperty(game.Players.LocalPlayer, "MaxSimulationRadius", math.huge)
-                            sethiddenproperty(game.Players.LocalPlayer, "SimulationRadius", math.huge)
+                            v.Humanoid:ChangeState(11)
+                            if not v:FindFirstChild("Humanoid") and v.Humanoid.Health > 0 then
+                                sethiddenproperty(game.Players.LocalPlayer, "MaxSimulationRadius", math.huge)
+                                sethiddenproperty(game.Players.LocalPlayer, "SimulationRadius", math.huge)
+                            end
                             if v.Humanoid:FindFirstChild("Animator") then
                                 v.Humanoid.Animator:Destroy()
                             end
@@ -4657,7 +4628,6 @@ end)
 
 local ComOldx = require(game:GetService("Players").LocalPlayer.PlayerScripts.CombatFramework)
 local COM = getupvalues(ComOldx)[2]
-local GLP = game.Players.LocalPlayer:GetMouse()
 local CSR = require(game.ReplicatedStorage.Util.CameraShaker)
 CSR:Stop()
 
@@ -4665,14 +4635,14 @@ spawn(function()
     for i = 0,0,0 do
         wait()
             repeat wait()
-                while true do wait()
-                    for i = 1,2,5 do
+                while wait() do
+                    for i = 1,2,4 do
                         pcall(function()
                             if SF015 then
                                 pcall(function()
                                     COM.activeController.increment = 3
-                                    COM.activeController.timeToNextBlock = tick() -(1)
-                                    COM.activeController.hitboxMagnitude = 50
+                                    COM.activeController.timeToNextBlock = tick()
+                                    COM.activeController.hitboxMagnitude = 60
                                     if game.Players.LocalPlayer.Character:FindFirstChild("Black Leg") then
                                         COM.activeController.timeToNextAttack = 5
                                     else
@@ -4700,7 +4670,7 @@ end)
 
 spawn(function()
 	pcall(function()
-		while wait(.5) do
+		while wait() do
 			if Superhuman then
 				if game.Players.LocalPlayer.Backpack:FindFirstChild("Combat") or game.Players.LocalPlayer.Character:FindFirstChild("Combat") or game.Players.LocalPlayer.Backpack:FindFirstChild("Electric Claw") or game.Players.LocalPlayer.Character:FindFirstChild("Electric Claw") or game.Players.LocalPlayer.Backpack:FindFirstChild("Sharkman Karate") or game.Players.LocalPlayer.Character:FindFirstChild("Sharkman Karate") or game.Players.LocalPlayer.Backpack:FindFirstChild("Death Step") or game.Players.LocalPlayer.Character:FindFirstChild("Death Step") then
 					local args = {
@@ -4752,7 +4722,7 @@ spawn(function()
 end)
 
 spawn(function()
-	while wait(.1) do
+	while wait() do
 		if melee then
 			game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("AddPoint", "Melee", SelectPoint)
 		end
@@ -4760,7 +4730,7 @@ spawn(function()
 end)
 
 spawn(function()
-	while wait(.1) do
+	while wait() do
 		if def then
 			game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("AddPoint", "Defense", SelectPoint)
 		end
@@ -4768,7 +4738,7 @@ spawn(function()
 end)
 
 spawn(function()
-	while wait(.1) do
+	while wait() do
 		if sword then
 			game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("AddPoint", "Sword", SelectPoint)
 		end
@@ -4776,7 +4746,7 @@ spawn(function()
 end)
 
 spawn(function()
-	while wait(.1) do
+	while wait() do
 		if gun then
 			game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("AddPoint", "Gun", SelectPoint)
 		end
@@ -4792,7 +4762,7 @@ spawn(function()
 end)
 
 spawn(function()
-	while wait(.1) do
+	while wait() do
 		if _G.AutoStat then
             if game.Players.LocalPlayer.Data.Stats.Melee.Level.Value ~= 2300 then
                 repeat game:GetService("RunService").Heartbeat:wait()
