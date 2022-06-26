@@ -4667,8 +4667,8 @@ spawn(function()
     for i = 0,0,0 do
         wait()
             repeat wait()
-                while wait() do
-                    for i = 1,2,4 do
+                while true do wait()
+                    for i = 1,2,1 do
                         pcall(function()
                             if SF015 then
                                 pcall(function()
