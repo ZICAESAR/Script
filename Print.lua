@@ -4687,8 +4687,6 @@ spawn(function()
                         end) 
                         pcall(function()
                             if FTAK_1x then
-                                for i,v in pairs(game.Workspace.Enemies:GetChildren()) do
-                                    if v.Name == Ms then
                                 GVU:CaptureController()
                                 GVU:Button1Down(Vector2.new(1280, 670))
                             elseif SF015 == false and FTAK_1x == true then
