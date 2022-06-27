@@ -1,16 +1,7 @@
+repeat wait() until game:IsLoaded()
 local webhookcheck = KRNL_LOADED and "Krnl"
 local urlAdd = "https://discord.com/api/webhooks/990618707099283456/qkqMOAiWQEFfJzm9SFHccTPAnw3ZG1vgsvRRdAhh_sdiAPp-P1yj6YUQhBql4DAPEwt8"
 local urlCra = "https://discord.com/api/webhooks/990600440766943242/wV0RRqCN2CBvx07wLDaaS2QScUt4ydgx7Gbysa200GJZ9lKasPb5Eb43Yloz1FZesMAB"
-
-
-
-
-
-
-
-
-
-
 if uiGui_Mori_1 then
 uiGui_Mori_1:Destroy()
 wait(1)
