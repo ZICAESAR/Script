@@ -4598,17 +4598,15 @@ spawn(function()
 end)
 
 spawn(function()
-    while wait(.5) do
+    while wait(.1) do
         pcall(function()
             for i,v in pairs(game.Workspace.Enemies:GetChildren()) do
                 if _G.Magnet and MagnetActive then
                     if v.Name == Ms and v:FindFirstChild("Humanoid") and v.Humanoid.Health > 0 then
-                        if (v.HumanoidRootPart.Position - PosMon.Position).Magnitude <= 275 then
+                        if (v.HumanoidRootPart.Position - PosMon.Position).Magnitude <= 400 then
                             v.Head.CanCollide = false
                             v.HumanoidRootPart.CanCollide = false
-                            v.HumanoidRootPart.Size = Vector3.new(60, 60, 60)
                             v.HumanoidRootPart.CFrame = PosMon
-                            v.Humanoid:ChangeState(11)
                             if not v:FindFirstChild("HumanoidRootPart") then
                                 sethiddenproperty(game.Players.LocalPlayer, "MaxSimulationRadius", 99999999999999999999)
                                 sethiddenproperty(game.Players.LocalPlayer, "SimulationRadius", math.huge)
@@ -4642,8 +4640,8 @@ spawn(function()
                             if SF015 then
                                 pcall(function()
                                     COM.activeController.increment = 3
-                                    COM.activeController.timeToNextBlock = tick() -(1)
-                                    COM.activeController.hitboxMagnitude = 60
+                                    COM.activeController.timeToNextBlock = tick()
+                                    COM.activeController.hitboxMagnitude = 50
                                     if game.Players.LocalPlayer.Character:FindFirstChild("Black Leg") then
                                         COM.activeController.timeToNextAttack = 5
                                     else
