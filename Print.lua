@@ -4413,7 +4413,7 @@ function EquipWeapon(ToolSe)
 end
 
 spawn(function()
-    while wait(1) do
+    while wait(.1) do
         if _G.SetSpawn then
             game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("SetSpawnPoint")
         end
@@ -4421,7 +4421,7 @@ spawn(function()
 end)
 
 spawn(function()
-    while wait(.1) do
+    while wait() do
         if Auto_Farm then
             CheckLevel()
             autofarm()
@@ -4430,7 +4430,7 @@ spawn(function()
 end)
 
 spawn(function()
-    while wait(.1) do
+    while wait() do
         if AutoNew then
             CheckLevel()
             autoNew()
@@ -4442,13 +4442,13 @@ CFrame_ = 1
 spawn(function()
 	while wait() do
         if CFrame_ == 1 then
-		    CFrame_x = CFrame.new(0, 40, 0.5)
+		    CFrame_x = CFrame.new(0, 40, 1)
         elseif CFrame_ == 2 then
-            CFrame_x = CFrame.new(-0.5, 40, 0)
+            CFrame_x = CFrame.new(-1, 40, 0)
         elseif CFrame_ == 3 then
-		    CFrame_x = CFrame.new(0, 40, -0.5)
+		    CFrame_x = CFrame.new(0, 40, -1)
         elseif CFrame_ == 4 then
-            CFrame_x = CFrame.new(0.5, 40, 0)
+            CFrame_x = CFrame.new(1, 40, 0)
         end
 	end
 end)
@@ -4511,9 +4511,9 @@ function autofarm()
                                         FTAK_1x = true
                                     end
                                     if v.Name == Ms and v:FindFirstChild("Humanoid") and v.Humanoid.Health > 0 then
-                                        v.Head.Anchored = true
+                                        v.Head.Anchored = true or false
                                     else
-                                        v.Head.Anchored = false
+                                        v.Head.Anchored = false or true
                                     end
                                 else
                                     MagnetActive = false    
@@ -4598,12 +4598,12 @@ spawn(function()
 end)
 
 spawn(function()
-    while wait(.1) do
+    game:GetService("RunService").Heartbeat:connect(function()
         pcall(function()
             for i,v in pairs(game.Workspace.Enemies:GetChildren()) do
                 if _G.Magnet and MagnetActive then
                     if v.Name == Ms and v:FindFirstChild("Humanoid") and v.Humanoid.Health > 0 then
-                        if (v.HumanoidRootPart.Position - PosMon.Position).Magnitude <= 400 then
+                        if (v.HumanoidRootPart.Position - PosMon.Position).Magnitude <= 325 then
                             v.Head.CanCollide = false
                             v.HumanoidRootPart.CanCollide = false
                             v.HumanoidRootPart.CFrame = PosMon
@@ -4622,7 +4622,7 @@ spawn(function()
                 end
             end
         end)
-    end
+    end)
 end)
 
 local ComOldx = require(game:GetService("Players").LocalPlayer.PlayerScripts.CombatFramework)
