@@ -4607,6 +4607,7 @@ spawn(function()
                             v.Head.CanCollide = false
                             v.HumanoidRootPart.CanCollide = false
                             v.HumanoidRootPart.CFrame = PosMon
+			    v.HumanoidRootPart.Size = Vector3.new(60, 60, 60)
                             if not v:FindFirstChild("HumanoidRootPart") then
                                 sethiddenproperty(game.Players.LocalPlayer, "MaxSimulationRadius", 99999999999999999999)
                                 sethiddenproperty(game.Players.LocalPlayer, "SimulationRadius", math.huge)
