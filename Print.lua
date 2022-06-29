@@ -4498,16 +4498,15 @@ function autofarm()
                             if game:GetService("Workspace").Enemies:GetChildren(Ms) then
                                 if string.find(game:GetService("Players").LocalPlayer.PlayerGui.Main.Quest.Container.QuestTitle.Title.Text, NameMon) then
                                     EquipWeapon(SelectToolWeapon)
-                                    TP(CFrameMon*CFrame_x)
                                     CFrameMon = v.HumanoidRootPart.CFrame
                                     v.HumanoidRootPart.CanCollide = false
                                     MagnetActive = true
                                     if SF015 == false then
-                                        TP(CFrameMon*CFrame_x)
+                                        TP(v.HumanoidRootPart.CFrame*CFrame_x)
                                         game:GetService("VirtualUser"):CaptureController()
                                         game:GetService("VirtualUser"):Button1Down(Vector2.new(1280, 670))
                                     elseif SF015 == true then
-                                       TP(CFrameMon*CFrame_x)
+                                       TP(v.HumanoidRootPart.CFrame*CFrame_x)
                                        FTAK_1x = true
                                     end
                                     if v.Name == Ms and v:FindFirstChild("Humanoid") and v.Humanoid.Health > 0 then
