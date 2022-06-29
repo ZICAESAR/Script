@@ -4438,34 +4438,6 @@ spawn(function()
     end
 end)
 
-CFrame_ = 1
-spawn(function()
-	while wait() do
-        if CFrame_ == 1 then
-		    CFrame_x = CFrame.new(0, 40, 5)
-        elseif CFrame_ == 2 then
-            CFrame_x = CFrame.new(-5, 40, 0)
-        elseif CFrame_ == 3 then
-		    CFrame_x = CFrame.new(0, 40, -5)
-        elseif CFrame_ == 4 then
-            CFrame_x = CFrame.new(5, 40, 0)
-        end
-	end
-end)
-
-spawn(function()
-	while wait() do
-		CFrame_ = 1
-        wait(.1)
-        CFrame_ = 2
-        wait(.1)
-        CFrame_ = 3
-        wait(.1)
-        CFrame_ = 4
-        wait(.1)
-	end
-end)
-
 function EquipWeapon(ToolSe)
     if game.Players.LocalPlayer.Backpack:FindFirstChild(ToolSe) then
         local tool = game.Players.LocalPlayer.Backpack:FindFirstChild(ToolSe)
@@ -4494,20 +4466,17 @@ function autofarm()
             if game:GetService("Workspace").Enemies:FindFirstChild(Ms) then
                 for _,v in pairs(game:GetService("Workspace").Enemies:GetChildren()) do
                     if v.Name == Ms and v:FindFirstChild("Humanoid") and v.Humanoid.Health > 0 then
-                        repeat game:GetService('RunService').Heartbeat:wait()
+                        repeat game:GetService("RunService").Heartbeat:wait()
                             if game:GetService("Workspace").Enemies:GetChildren(Ms) then
                                 if string.find(game:GetService("Players").LocalPlayer.PlayerGui.Main.Quest.Container.QuestTitle.Title.Text, NameMon) then
                                     EquipWeapon(SelectToolWeapon)
-                                    CFrameMon = v.HumanoidRootPart.CFrame
                                     v.HumanoidRootPart.CanCollide = false
                                     MagnetActive = true
-                                    if SF015 == false then
-                                        TP(v.HumanoidRootPart.CFrame*CFrame_x)
-                                        game:GetService("VirtualUser"):CaptureController()
-                                        game:GetService("VirtualUser"):Button1Down(Vector2.new(1280, 670))
-                                    elseif SF015 == true then
-                                       TP(v.HumanoidRootPart.CFrame*CFrame_x)
+                                    if SF015 == true then
+                                       TP(CFrameMon * CFrame.new(0, 40, 0))
                                        FTAK_1x = true
+                                    else
+                                        FTAK_1x = false
                                     end
                                     if v.Name == Ms and v:FindFirstChild("Humanoid") and v.Humanoid.Health > 0 then
                                         v.Head.Anchored = true or false
