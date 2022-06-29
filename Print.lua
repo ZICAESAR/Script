@@ -4413,7 +4413,7 @@ function EquipWeapon(ToolSe)
 end
 
 spawn(function()
-    while wait(.1) do
+    while wait(1) do
         if _G.SetSpawn then
             game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("SetSpawnPoint")
         end
@@ -4421,7 +4421,7 @@ spawn(function()
 end)
 
 spawn(function()
-    while wait() do
+    while wait(.1) do
         if Auto_Farm then
             CheckLevel()
             autofarm()
@@ -4430,7 +4430,7 @@ spawn(function()
 end)
 
 spawn(function()
-    while wait() do
+    while wait(.1) do
         if AutoNew then
             CheckLevel()
             autoNew()
@@ -4442,13 +4442,13 @@ CFrame_ = 1
 spawn(function()
 	while wait() do
         if CFrame_ == 1 then
-		    CFrame_x = CFrame.new(0, 40, 1)
+		    CFrame_x = CFrame.new(0, 40, 5)
         elseif CFrame_ == 2 then
-            CFrame_x = CFrame.new(-1, 40, 0)
+            CFrame_x = CFrame.new(-5, 40, 0)
         elseif CFrame_ == 3 then
-		    CFrame_x = CFrame.new(0, 40, -1)
+		    CFrame_x = CFrame.new(0, 40, -5)
         elseif CFrame_ == 4 then
-            CFrame_x = CFrame.new(1, 40, 0)
+            CFrame_x = CFrame.new(5, 40, 0)
         end
 	end
 end)
@@ -4498,17 +4498,17 @@ function autofarm()
                             if game:GetService("Workspace").Enemies:GetChildren(Ms) then
                                 if string.find(game:GetService("Players").LocalPlayer.PlayerGui.Main.Quest.Container.QuestTitle.Title.Text, NameMon) then
                                     EquipWeapon(SelectToolWeapon)
-                                    TP(v.HumanoidRootPart.CFrame * CFrame_x)
-                                    PosMon = v.HumanoidRootPart.CFrame
+                                    TP(CFrameMon*CFrame_x)
+                                    CFrameMon = v.HumanoidRootPart.CFrame
                                     v.HumanoidRootPart.CanCollide = false
                                     MagnetActive = true
                                     if SF015 == false then
-                                        TP(v.HumanoidRootPart.CFrame * CFrame.new(0, 40, 0))
+                                        TP(CFrameMon*CFrame_x)
                                         game:GetService("VirtualUser"):CaptureController()
                                         game:GetService("VirtualUser"):Button1Down(Vector2.new(1280, 670))
                                     elseif SF015 == true then
-                                        TP(v.HumanoidRootPart.CFrame * CFrame_x)
-                                        FTAK_1x = true
+                                       TP(CFrameMon*CFrame_x)
+                                       FTAK_1x = true
                                     end
                                     if v.Name == Ms and v:FindFirstChild("Humanoid") and v.Humanoid.Health > 0 then
                                         v.Head.Anchored = true or false
@@ -4592,6 +4592,7 @@ spawn(function()
         if AutoReMob then
             for i,v in pairs(game.Workspace.Enemies:GetChildren()) do
                 v.Head.Anchored = false
+                v.HumanoidRootPart.Anchored = false
             end
         end
     end
@@ -4600,24 +4601,21 @@ end)
 spawn(function()
     game:GetService("RunService").Heartbeat:connect(function()
         pcall(function()
-            for i,v in pairs(game.Workspace.Enemies:GetChildren()) do
+            for _,v in pairs(game.Workspace.Enemies:GetChildren()) do
                 if _G.Magnet and MagnetActive then
                     if v.Name == Ms and v:FindFirstChild("Humanoid") and v.Humanoid.Health > 0 then
-                        if (v.HumanoidRootPart.Position - PosMon.Position).Magnitude <= 325 then
-                            v.Head.CanCollide = false
-                            v.HumanoidRootPart.CanCollide = false
-                            v.HumanoidRootPart.CFrame = PosMon
-			    v.HumanoidRootPart.Size = Vector3.new(60, 60, 60)
-                            if not v:FindFirstChild("HumanoidRootPart") then
-                                sethiddenproperty(game.Players.LocalPlayer, "MaxSimulationRadius", 99999999999999999999)
-                                sethiddenproperty(game.Players.LocalPlayer, "SimulationRadius", math.huge)
-                            else
-                                sethiddenproperty(game.Players.LocalPlayer, "MaxSimulationRadius", 99999999999999999999)
-                                sethiddenproperty(game.Players.LocalPlayer, "SimulationRadius", math.huge)
-                            end
-                            if v.Humanoid:FindFirstChild("Animator") then
-                                v.Humanoid.Animator:Destroy()
-                            end
+                        if (v.HumanoidRootPart.Position - CFrameMon.Position).Magnitude <= 325 then
+                            pcall(function()
+                                v.Head.CanCollide = false
+                                v.HumanoidRootPart.CanCollide = false
+                                v.HumanoidRootPart.Size = Vector3.new(100, 100, 100)
+                                v.HumanoidRootPart.CFrame = CFrameMon
+                                if v.Humanoid:FindFirstChild("Animator") and not MagnetActive == false then
+                                    sethiddenproperty(game.Players.LocalPlayer, "MaxSimulationRadius", 99999999999999999999)
+                                    sethiddenproperty(game.Players.LocalPlayer, "SimulationRadius", math.huge)
+                                    v.Humanoid.Animator:Destroy()
+                                end
+                            end)
                         end
                     end
                 end
@@ -4632,45 +4630,44 @@ local CSR = require(game.ReplicatedStorage.Util.CameraShaker)
 CSR:Stop()
 
 spawn(function()
-    for i = 0,0,0 do
-        wait()
-            repeat wait()
-                while wait() do
-                    for i = 1,2,4 do
-                        pcall(function()
-                            if SF015 then
-                                pcall(function()
-                                    COM.activeController.increment = 3
-                                    COM.activeController.timeToNextBlock = tick()
-                                    COM.activeController.hitboxMagnitude = 50
-                                    if game.Players.LocalPlayer.Character:FindFirstChild("Black Leg") then
-                                        COM.activeController.timeToNextAttack = 5
-                                    else
-                                        COM.activeController.timeToNextAttack = tick() -(1)
-                                    end
-                                    COM.activeController.blocking = false
-                                    COM.activeController.attacking = false
-                                end)
-                            end
-                        end) 
-                        pcall(function()
-                            if FTAK_1x then
+    repeat wait()
+    while game:GetService("RunService").Stepped:wait() do
+        for v = 1,2,5 do
+            pcall(function()
+                if game:GetService("Players").LocalPlayer.PlayerScripts:FindFirstChild("CombatFramework") and SF015 then
+                    pcall(function()
+                        COM.activeController.increment = 3
+                        COM.activeController.timeToNextBlock = tick()
+                        COM.activeController.hitboxMagnitude = 60
+                        if game.Players.LocalPlayer.Character:FindFirstChild("Black Leg") then
+                            COM.activeController.timeToNextAttack = 5
+                        else
+                            COM.activeController.timeToNextAttack = tick()
+                        end
+                        COM.anims = false
+                        COM.activeController.blocking = false
+                        COM.activeController.attacking = false
+                    end)
+                    if not FTAK_1x == false then
+                        for i,v in pairs(game:GetService("Workspace").Enemies:GetChildren()) do
+                            if v:FindFirstChild("HumanoidRootPart") and v:FindFirstChild("Humanoid") and v.Humanoid.Health > 0 and (v.HumanoidRootPart.Position - game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.Position).magnitude <= 75 then
                                 game:GetService("VirtualUser"):CaptureController()
-                                game:GetService("VirtualUser"):Button1Down(Vector2.new(1280, 670))
-                            elseif SF015 == false and FTAK_1x == true then
-                                FTAK_1x = false  
+                                game:GetService("VirtualUser"):ClickButton1(Vector2.new(1280, 670))
                             end
-                        end)
+                        end
                     end
+                elseif SF015 == false and FTAK_1x == true then
+                    FTAK_1x = false  
                 end
-            until game:GetService("Players").LocalPlayer.PlayerScripts:FindFirstChild("CombatFramework")
-        wait()
+            end)
+        end
     end
+    until game:GetService("Players").LocalPlayer.PlayerScripts:FindFirstChild("CombatFramework")
 end)
 
 spawn(function()
 	pcall(function()
-		while wait() do
+		while wait(.5) do
 			if Superhuman then
 				if game.Players.LocalPlayer.Backpack:FindFirstChild("Combat") or game.Players.LocalPlayer.Character:FindFirstChild("Combat") or game.Players.LocalPlayer.Backpack:FindFirstChild("Electric Claw") or game.Players.LocalPlayer.Character:FindFirstChild("Electric Claw") or game.Players.LocalPlayer.Backpack:FindFirstChild("Sharkman Karate") or game.Players.LocalPlayer.Character:FindFirstChild("Sharkman Karate") or game.Players.LocalPlayer.Backpack:FindFirstChild("Death Step") or game.Players.LocalPlayer.Character:FindFirstChild("Death Step") then
 					local args = {
@@ -4762,7 +4759,7 @@ spawn(function()
 end)
 
 spawn(function()
-	while wait() do
+	while game:GetService('RunService').Heartbeat:wait() do
 		if _G.AutoStat then
             if game.Players.LocalPlayer.Data.Stats.Melee.Level.Value ~= 2300 then
                 repeat game:GetService("RunService").Heartbeat:wait()
@@ -4798,9 +4795,17 @@ spawn(function()
 end)
 
 game:GetService("RunService").Stepped:Connect(function()
-    for _, v in pairs(game.Players.LocalPlayer.Character:GetDescendants()) do
-        if v:IsA("BasePart") then
-            v.CanCollide = false    
+    if Auto_Farm then
+        for _, v in pairs(game.Players.LocalPlayer.Character:GetDescendants()) do
+            if v:IsA("BasePart") then
+                v.CanCollide = false    
+            end
+        end
+    else
+        for _, v in pairs(game.Players.LocalPlayer.Character:GetDescendants()) do
+            if v:IsA("BasePart") then
+                v.CanCollide = true 
+            end
         end
     end
 end)
