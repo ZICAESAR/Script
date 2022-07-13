@@ -2,15 +2,13 @@ repeat wait() until game:IsLoaded()
 repeat wait() until game.Players
 repeat wait() until game.Players.LocalPlayer
 
-wait(2)
+wait(1)
 
 local RbxAnalyticsService = game:GetService("RbxAnalyticsService"):GetClientId()
 if game:GetService("RbxAnalyticsService"):GetClientId() ~= RbxAnalyticsService then
     while true do 
     end
 end
-
-wait(3)
 
 local ui =  game:GetService("CoreGui"):FindFirstChild("redui")  
 if ui then 
@@ -4190,14 +4188,14 @@ function CheckLevel()
             QuestLv = 1
             NameMon = "Marine Lieutenant"
             CFrameQ = CFrame.new(-2440.9934082031, 73.04190826416, -3217.7082519531)
-            CFrameMon = CFrame.new(-2489.2622070313, 84.613594055176, -3151.8830566406)
+            CFrameMon = CFrame.new(-2881.047119140625, 73.20455169677734, -2985.87939453125)
         elseif Lv == 900 or Lv <= 949 or SelectMonster == "Marine Captain [Lv. 900]" then -- Marine Captain
             Ms = "Marine Captain [Lv. 900]"
             NameQuest = "MarineQuest3"
             QuestLv = 2
             NameMon = "Marine Captain"
             CFrameQ = CFrame.new(-2440.9934082031, 73.04190826416, -3217.7082519531)
-            CFrameMon = CFrame.new(-2335.2026367188, 79.786659240723, -3245.8674316406)
+            CFrameMon = CFrame.new(-1913.3197021484375, 73.2123031616211, -3332.065185546875)
         elseif Lv == 950 or Lv <= 974 or SelectMonster == "Zombie [Lv. 950]" then -- Zombie
             Ms = "Zombie [Lv. 950]"
             NameQuest = "ZombieQuest"
