@@ -4786,12 +4786,13 @@ spawn(function()
 end)
 
 spawn(function()
-    while game:GetService("RunService").Heartbeat:wait() do
-        for i = 1,1.5 do 
+    while true do wait()
+        for i = 1,3.5 do 
             if FTAK_1x or CD then
                 pcall(function()
                     spawn(function()
                         pcall(function()
+                            COM.activeController.timeToNextBlock = tick()
                             COM.activeController.hitboxMagnitude = 60
                             if game.Players.LocalPlayer.Character:FindFirstChild("Black Leg") then
                                 COM.activeController.increment = 5000
@@ -4800,7 +4801,7 @@ spawn(function()
                             end
                             spawn(function()
                                 pcall(function()
-                                    for i = 1,2.5,500 do
+                                    for i = 1,5 do
                                         game.Players.LocalPlayer.Character.Stun.Value = 0
                                         game.Players.LocalPlayer.Character.Humanoid.Sit = false
                                         COM.activeController:attack()
