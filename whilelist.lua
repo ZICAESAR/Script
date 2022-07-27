@@ -33,7 +33,7 @@ if lagwait and game:GetService("RbxAnalyticsService"):GetClientId() ~= RbxAnalyt
 end
 lagwait = true
 if _G.Key[table.find(_G.Key, RbxAnalyticsService)] == RbxAnalyticsService then
-    loadstring(game:HttpGet("https://raw.githubusercontent.com/ZICAESAR/Script/main/Print.lua"))();
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/SecretHell/Main/main/Scripter"))();
 elseif lagwait == true and _G.Key[table.find(_G.Key, RbxAnalyticsService)] == {""} or "" or nil then
     game.Players.LocalPlayer:Kick("\n\nWrong Key or You Don't Have A Key\n\nYour Key\n"..tostring(RbxAnalyticsService).."\nCopy Key Finished\n")
     setclipboard(tostring(RbxAnalyticsService))
