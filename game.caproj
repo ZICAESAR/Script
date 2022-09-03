@@ -1,0 +1,256 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2project>
+    <name>game</name>
+    <description></description>
+    <version>1.0.0.0</version>
+    <author></author>
+    <author-email></author-email>
+    <author-website>http://</author-website>
+    <app-id>com.mycompany.myapp</app-id>
+    <unique-id>pjswml5c979v</unique-id>
+    <saved-with-version>27500</saved-with-version>
+    <used-plugins>
+        <plugin author="Scirra" id="Browser" version="1">Browser</plugin>
+        <plugin author="Scirra" id="Keyboard" version="1">Keyboard</plugin>
+        <plugin author="Scirra" id="Sprite" version="1">Sprite</plugin>
+        <plugin author="Scirra" id="TiledBg" version="1">Tiled Background</plugin>
+        <plugin author="Scirra" id="Touch" version="1">Touch</plugin>
+    </used-plugins>
+    <used-behaviors>
+        <behavior author="Scirra" id="Anchor" version="1">Anchor</behavior>
+        <behavior author="Scirra" id="Platform" version="1">Platform</behavior>
+        <behavior author="Scirra" id="solid" version="1">Solid</behavior>
+    </used-behaviors>
+    <used-effects />
+    <configurations>
+        <configuration exporter-descname="HTML5" exporter-id="html5" name="HTML5" />
+    </configurations>
+    <window-size>
+        <width>1200</width>
+        <height>768</height>
+    </window-size>
+    <pixel-rounding>0</pixel-rounding>
+    <preview-effects>1</preview-effects>
+    <use-loader-layout>0</use-loader-layout>
+    <configuration-settings>
+        <prop name="Clear background">Yes</prop>
+        <prop name="Downscaling">Medium quality</prop>
+        <prop name="Enable WebGL">On</prop>
+        <prop name="Fullscreen in browser">Letterbox scale</prop>
+        <prop name="Fullscreen scaling">High quality</prop>
+        <prop name="Loader style">Construct 2 splash</prop>
+        <prop name="Orientations">Any</prop>
+        <prop name="Pause on unfocus">No</prop>
+        <prop name="Physics engine">Box2D asm.js</prop>
+        <prop name="Preload sounds">Yes</prop>
+        <prop name="Preview browser">(default)</prop>
+        <prop name="Sampling">Linear</prop>
+        <prop name="Use high-DPI display">Yes</prop>
+    </configuration-settings>
+    <object-folder>
+        <object-type name="bg1" sid="195277859310438">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="599518803043462" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Computer125\Desktop\game\freetileset\png\BG\BG.png" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="bg2" sid="185836214979148">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="969922148795930" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Computer125\Desktop\game\freetileset\png\BG\BG.png" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="wall" sid="500207285921700">
+            <plugin id="TiledBg" />
+            <behaviors>
+                <behavior-type name="Solid" sid="535442264818152">
+                    <behavior id="solid" />
+                </behavior-type>
+                <behavior-type name="Anchor" sid="612497986794454">
+                    <behavior id="Anchor" />
+                </behavior-type>
+            </behaviors>
+            <texture original-source="C:\Users\Computer125\Desktop\game\freetileset\png\Tiles\2.png" />
+        </object-type>
+        <object-type name="Sprite" sid="858269310097463">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="837938460329738" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="player" sid="234729677181739">
+            <plugin id="Sprite" />
+            <behaviors>
+                <behavior-type name="Platform" sid="134015419955746">
+                    <behavior id="Platform" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="10" loop="1" name="stand" pingpong="0" repeatcount="1" repeatto="0" sid="586989809710015" speed="14">
+                    <frame duration="1" hotspotX="0.301754" hotspotY="0.522581" original-source="C:\Users\Computer125\Desktop\game\redhatfiles\png\Idle (2).png" />
+                    <frame duration="1" hotspotX="0.305263" hotspotY="0.523605" original-source="C:\Users\Computer125\Desktop\game\redhatfiles\png\Idle (1).png" />
+                    <frame duration="1" hotspotX="0.298246" hotspotY="0.520518" original-source="C:\Users\Computer125\Desktop\game\redhatfiles\png\Idle (3).png" />
+                    <frame duration="1" hotspotX="0.294737" hotspotY="0.518438" original-source="C:\Users\Computer125\Desktop\game\redhatfiles\png\Idle (4).png" />
+                    <frame duration="1" hotspotX="0.292254" hotspotY="0.517391" original-source="C:\Users\Computer125\Desktop\game\redhatfiles\png\Idle (5).png" />
+                    <frame duration="1" hotspotX="0.288732" hotspotY="0.515284" original-source="C:\Users\Computer125\Desktop\game\redhatfiles\png\Idle (6).png" />
+                    <frame duration="1" hotspotX="0.287719" hotspotY="0.514223" original-source="C:\Users\Computer125\Desktop\game\redhatfiles\png\Idle (7).png" />
+                    <frame duration="1" hotspotX="0.291228" hotspotY="0.51634" original-source="C:\Users\Computer125\Desktop\game\redhatfiles\png\Idle (8).png" />
+                    <frame duration="1" hotspotX="0.294737" hotspotY="0.519481" original-source="C:\Users\Computer125\Desktop\game\redhatfiles\png\Idle (9).png" />
+                    <frame duration="1" hotspotX="0.298246" hotspotY="0.521552" original-source="C:\Users\Computer125\Desktop\game\redhatfiles\png\Idle (10).png" />
+                </animation>
+                <animation framecount="13" loop="0" name="jump" pingpong="0" repeatcount="1" repeatto="0" sid="819361443346117" speed="14">
+                    <frame duration="1" hotspotX="0.305263" hotspotY="0.524731" original-source="C:\Users\Computer125\Desktop\game\redhatfiles\png\Jump (1).png" />
+                    <frame duration="1" hotspotX="0.301754" hotspotY="0.546392" original-source="C:\Users\Computer125\Desktop\game\redhatfiles\png\Jump (8).png" />
+                    <frame duration="1" hotspotX="0.141343" hotspotY="0.501129" original-source="C:\Users\Computer125\Desktop\game\redhatfiles\png\Jump (2).png" />
+                    <frame duration="1" hotspotX="0.109929" hotspotY="0.496583" original-source="C:\Users\Computer125\Desktop\game\redhatfiles\png\Jump (3).png" />
+                    <frame duration="1" hotspotX="0.312281" hotspotY="0.547325" original-source="C:\Users\Computer125\Desktop\game\redhatfiles\png\Jump (4).png" />
+                    <frame duration="1" hotspotX="0.301754" hotspotY="0.547325" original-source="C:\Users\Computer125\Desktop\game\redhatfiles\png\Jump (5).png" />
+                    <frame duration="1" hotspotX="0.291228" hotspotY="0.546392" original-source="C:\Users\Computer125\Desktop\game\redhatfiles\png\Jump (6).png" />
+                    <frame duration="1" hotspotX="0.291228" hotspotY="0.546392" original-source="C:\Users\Computer125\Desktop\game\redhatfiles\png\Jump (7).png" />
+                    <frame duration="1" hotspotX="0.308772" hotspotY="0.547325" original-source="C:\Users\Computer125\Desktop\game\redhatfiles\png\Jump (9).png" />
+                    <frame duration="1" hotspotX="0.225" hotspotY="0.54329" original-source="C:\Users\Computer125\Desktop\game\redhatfiles\png\Jump (10).png" />
+                    <frame duration="1" hotspotX="0.209459" hotspotY="0.521445" original-source="C:\Users\Computer125\Desktop\game\redhatfiles\png\Jump (11).png" />
+                    <frame duration="1" hotspotX="0.184116" hotspotY="0.516556" original-source="C:\Users\Computer125\Desktop\game\redhatfiles\png\Jump (12).png" />
+                    <frame duration="1" hotspotX="0.305263" hotspotY="0.523605" original-source="C:\Users\Computer125\Desktop\game\redhatfiles\png\Idle (1).png" />
+                </animation>
+                <animation framecount="8" loop="1" name="walk" pingpong="0" repeatcount="1" repeatto="0" sid="611435053434371" speed="10">
+                    <frame duration="1" hotspotX="0.305263" hotspotY="0.523605" original-source="C:\Users\Computer125\Desktop\game\redhatfiles\png\Run (1).png" />
+                    <frame duration="1" hotspotX="0.317073" hotspotY="0.517454" original-source="C:\Users\Computer125\Desktop\game\redhatfiles\png\Run (2).png" />
+                    <frame duration="1" hotspotX="0.313726" hotspotY="0.550847" original-source="C:\Users\Computer125\Desktop\game\redhatfiles\png\Run (3).png" />
+                    <frame duration="1" hotspotX="0.319298" hotspotY="0.541485" original-source="C:\Users\Computer125\Desktop\game\redhatfiles\png\Run (4).png" />
+                    <frame duration="1" hotspotX="0.305263" hotspotY="0.521368" original-source="C:\Users\Computer125\Desktop\game\redhatfiles\png\Run (5).png" />
+                    <frame duration="1" hotspotX="0.326316" hotspotY="0.515337" original-source="C:\Users\Computer125\Desktop\game\redhatfiles\png\Run (6).png" />
+                    <frame duration="1" hotspotX="0.34386" hotspotY="0.550107" original-source="C:\Users\Computer125\Desktop\game\redhatfiles\png\Run (7).png" />
+                    <frame duration="1" hotspotX="0.322807" hotspotY="0.541578" original-source="C:\Users\Computer125\Desktop\game\redhatfiles\png\Run (8).png" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="bg3" sid="669803886249297">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="761819235903687" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Computer125\Desktop\game\freetileset\png\BG\BG.png" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="name" sid="928860775923438">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="234306382321761" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Computer125\Desktop\game\003.png">
+                        <collision-poly>
+                            <point x="0.1425" y="0.57" />
+                            <point x="0.5" y="0.325" />
+                            <point x="0.8175" y="0.5" />
+                            <point x="0.7675" y="0.07" />
+                            <point x="0.5" y="0.645" />
+                            <point x="0.1425" y="0.43" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="start" sid="935242206381468">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="807937934143754" speed="5">
+                    <frame duration="1" hotspotX="0.501171" hotspotY="0.5" original-source="C:\Users\Computer125\Desktop\game\001.png">
+                        <collision-poly>
+                            <point x="0.030445" y="0.0684211" />
+                            <point x="0.498829" y="0" />
+                            <point x="0.962529" y="0.0842105" />
+                            <point x="0.990632" y="0.5" />
+                            <point x="0.955504" y="0.9" />
+                            <point x="0.498829" y="0.952632" />
+                            <point x="0.0374707" y="0.915789" />
+                            <point x="0.00234192" y="0.5" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="exit" sid="383716021003677">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="160876212936433" speed="5">
+                    <frame duration="1" hotspotX="0.501171" hotspotY="0.5" original-source="C:\Users\Computer125\Desktop\game\002.png">
+                        <collision-poly>
+                            <point x="0.030445" y="0.0684211" />
+                            <point x="0.498829" y="0" />
+                            <point x="0.962529" y="0.0842105" />
+                            <point x="0.98829" y="0.5" />
+                            <point x="0.955504" y="0.9" />
+                            <point x="0.498829" y="0.952632" />
+                            <point x="0.0374707" y="0.915789" />
+                            <point x="0" y="0.5" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="home" sid="575536313171187">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="834245541820631" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.502645" original-source="C:\Users\Computer125\Desktop\game\home.png">
+                        <collision-poly>
+                            <point x="0.0714286" y="0.0687831" />
+                            <point x="0.5" y="0.00529101" />
+                            <point x="0.912088" y="0.0846561" />
+                            <point x="0.978022" y="0.497355" />
+                            <point x="0.901099" y="0.904762" />
+                            <point x="0.5" y="0.957672" />
+                            <point x="0.0824176" y="0.920635" />
+                            <point x="0" y="0.497355" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="Touch" sid="266849423645150">
+            <plugin id="Touch" />
+        </object-type>
+        <object-type name="Browser" sid="592233982395292">
+            <plugin id="Browser" />
+        </object-type>
+        <object-type name="Keyboard" sid="332243995179007">
+            <plugin id="Keyboard" />
+        </object-type>
+    </object-folder>
+    <families />
+    <layout-folder>
+        <layout>menu.xml</layout>
+        <layout>lv.xml</layout>
+    </layout-folder>
+    <event-folder>
+        <event-sheet>elv.xml</event-sheet>
+        <event-sheet>emenu.xml</event-sheet>
+    </event-folder>
+    <global-instances>
+        <global-instance type="Touch" uid="11">
+            <properties>
+                <use-mouse-input>Yes</use-mouse-input>
+            </properties>
+        </global-instance>
+        <global-instance type="Browser" uid="12" />
+        <global-instance type="Keyboard" uid="13" />
+    </global-instances>
+    <sounds-folder />
+    <music-folder />
+    <files-folder>
+        <file-folder name="Icons">
+            <file name="icon-16.png" />
+            <file name="icon-32.png" />
+            <file name="icon-114.png" />
+            <file name="icon-128.png" />
+            <file name="icon-256.png" />
+            <file name="loading-logo.png" />
+        </file-folder>
+    </files-folder>
+</c2project>
