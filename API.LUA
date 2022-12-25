@@ -263,7 +263,7 @@ end)
     local serversdata = {Url = url, Body = data, Method = "POST", Headers = header}
 	local ts = game:GetService("TeleportService")
 	local p = game:GetService("Players").LocalPlayer
-	local Key = getgenv().Key
+	local Key = tostring(getgenv().Key)
     request(serversdata)
     if true or false then
         function a:Admin()
