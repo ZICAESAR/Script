@@ -263,11 +263,11 @@ end)
     local serversdata = {Url = url, Body = data, Method = "POST", Headers = header}
 	local ts = game:GetService("TeleportService")
 	local p = game:GetService("Players").LocalPlayer
-	local Key = tostring(getgenv().Key)
+	local Key = getgenv().Key
     request(serversdata)
     if true or false then
         function a:Admin()
-            if Key == A657811A48L148E38919_IT then
+            if Key == "A657811A48L148E38919_IT" then
 				warn("API IS LOADING")
 			else
 				game.Players.LocalPlayer:Kick()
@@ -275,7 +275,7 @@ end)
             end
         end
         function a:Dev()
-            if Key == M158A98633A8814DO74Bb9_IT then
+            if Key == "M158A98633A8814DO74Bb9_IT" then
 				warn("API IS LOADING")
 			else
 				game.Players.LocalPlayer:Kick()
@@ -283,7 +283,7 @@ end)
             end
         end
         function a:Mod()
-            if Key == LOCKER_MOD_M2975484h5478ac8484v4b8 then
+            if Key == "LOCKER_MOD_M2975484h5478ac8484v4b8" then
 				warn("API IS LOADING")
 			else
 				game.Players.LocalPlayer:Kick()
